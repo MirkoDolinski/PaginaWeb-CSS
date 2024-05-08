@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventuras Naturales</title>
+    <style>
+        .imagen-personalizada {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+    <style>
+        .imagen-personalizada {
+            width: 300px; 
+            height: 200px; 
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 200px auto;
+            grid-template-areas: 
+                "header header"
+                "nav main"
+                "footer footer";
+            grid-gap: 10px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            grid-area: header;
+        }
+
+        nav {
+            background-color: #f4f4f4;
+            padding: 20px;
+            grid-area: nav;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-bottom: 10px;
+        }
+
+        nav ul li a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+
+        main {
+            padding: 20px;
+            grid-area: main;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            grid-area: footer;
+        }
+
+        /* Añadimos estilo para cada sección */
+        section {
+            display: none;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Mostrar la sección activa */
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aventuras Naturales</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sobre" onclick="mostrarSeccion('sobre')">Sobre Nosotros</a></li>
+            <li><a href="#destinos" onclick="mostrarSeccion('destinos')">Destinos</a></li>
+            <li><a href="#contacto" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="sobre">
+            <h2>Sobre Nosotros</h2>
+            <p>¡Bienvenidos a Aventuras Naturales! Somos un equipo que se dedica a explorar los rincones más fascinantes de la naturaleza. Nuestra misión es llevar a nuestros clientes a experiencias en entornos naturales, desde gigantes montañas hasta selvas tropicales.</p>
+            <img src="turismo.jpg" class="imagen-personalizada">
+            
+            
+            
+        </section>
+
+        <section id="destinos">
+            <h2>Destinos</h2>
+            <p>Descubrí nuestros increíbles destinos alrededor del mundo. Desde los andes hasta las playas del Caribe¡Explora la naturaleza como nunca antes!</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>¿Listo para comenzar tu próxima aventura? Contáctanos hoy mismo para obtener más información sobre nuestros paquetes de viaje y reservar tu próxima salida a la naturaleza.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Derechos de autor © 2024. Todos los derechos reservados. Desarrollado por: Mirko Dolinski.</p>
+    </footer>
+
+    <script>
+        function mostrarSeccion(idSeccion) {
+            var secciones = document.querySelectorAll('main section');
+            secciones.forEach(function(seccion) {
+                if (seccion.id === idSeccion) {
+                    seccion.classList.add('active');
+                } else {
+                    seccion.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
